@@ -8,10 +8,14 @@
 
 import UIKit
 
+
 class PlayerDetails:UIViewController {
     
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var playerAge: UILabel!
     @IBOutlet weak var playerHeight: UILabel!
     @IBOutlet weak var playerNationality: UILabel!
+    
+  
+    
 }

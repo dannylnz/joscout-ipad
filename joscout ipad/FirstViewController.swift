@@ -10,18 +10,21 @@ import UIKit
 
 class FirstViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, DataEnteredDelegate {
     
+
     
-    
+    var matches : [Match] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.myOrientation = .landscape
         
+        var match = Match()
+        matches.append(match)
     }
 
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var objects = ["1"]
+    //var objects = ["1"]
     
     
     // MARK: Create collection View cell with title, image, and rounded border
@@ -29,19 +32,21 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        let object = objects[indexPath.row]
+        let match = matches[indexPath.row]
         
+        cell.teamAName.text = match.teamA.name
+        cell.teamBName.text = match.teamB.name
         
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 8
-        objects.append("cellName")
+        //objects.append("cellName")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return objects.count
+        return matches.count
     }
     
     // MARK: - Prepare for segue
@@ -49,6 +54,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSecondViewController" {
             let newMatchVC = segue.destination as! NewMatchVC
+           // newMatchVC.match = 1
             newMatchVC.delegate = self
         }
     }

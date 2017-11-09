@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EBD5CEFC63D20B4487EB985 /* Pods_joscout_ipad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376D45E555AC622EDE699ACA /* Pods_joscout_ipad.framework */; };
 		64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64514B801FB35E3B0011B576 /* TableViewCellFile.swift */; };
 		645BA7291F7966DE00348622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7281F7966DE00348622 /* AppDelegate.swift */; };
 		645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA72A1F7966DE00348622 /* FirstViewController.swift */; };
@@ -17,9 +18,16 @@
 		645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA75F1F7A8AB600348622 /* NewMatchVC.swift */; };
 		645BA7621F7A91EA00348622 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7611F7A91EA00348622 /* CollectionViewCell.swift */; };
 		6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */; };
+		64C399571FB497CE004008B3 /* joscout ipad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */; };
+		64C399591FB4B394004008B3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C399581FB4B394004008B3 /* Player.swift */; };
+		64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3995A1FB4B3A0004008B3 /* Team.swift */; };
+		64C3995D1FB4B3B8004008B3 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3995C1FB4B3B8004008B3 /* Match.swift */; };
+		64C3995F1FB4BD82004008B3 /* savedata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C3995E1FB4BD82004008B3 /* savedata.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003361FB7C7D13E5692B7DBA /* Pods-joscout ipad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joscout ipad.release.xcconfig"; path = "Pods/Target Support Files/Pods-joscout ipad/Pods-joscout ipad.release.xcconfig"; sourceTree = "<group>"; };
+		376D45E555AC622EDE699ACA /* Pods_joscout_ipad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_joscout_ipad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64514B801FB35E3B0011B576 /* TableViewCellFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFile.swift; sourceTree = "<group>"; };
 		645BA7251F7966DE00348622 /* joscout ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "joscout ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645BA7281F7966DE00348622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +40,12 @@
 		645BA75F1F7A8AB600348622 /* NewMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchVC.swift; sourceTree = "<group>"; };
 		645BA7611F7A91EA00348622 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
+		64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "joscout ipad.xcdatamodel"; sourceTree = "<group>"; };
+		64C399581FB4B394004008B3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		64C3995A1FB4B3A0004008B3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		64C3995C1FB4B3B8004008B3 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		64C3995E1FB4BD82004008B3 /* savedata.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = savedata.plist; sourceTree = "<group>"; };
+		C262174093C9D9F5E3BA9F76 /* Pods-joscout ipad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joscout ipad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-joscout ipad/Pods-joscout ipad.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBD5CEFC63D20B4487EB985 /* Pods_joscout_ipad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390E317E04D27C246C444A1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C262174093C9D9F5E3BA9F76 /* Pods-joscout ipad.debug.xcconfig */,
+				003361FB7C7D13E5692B7DBA /* Pods-joscout ipad.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5842C9BAFF8FBC4EA6FF5BF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				376D45E555AC622EDE699ACA /* Pods_joscout_ipad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		645BA71C1F7966DD00348622 = {
 			isa = PBXGroup;
 			children = (
 				645BA7271F7966DE00348622 /* joscout ipad */,
 				645BA7261F7966DE00348622 /* Products */,
+				390E317E04D27C246C444A1B /* Pods */,
+				5842C9BAFF8FBC4EA6FF5BF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				645BA7281F7966DE00348622 /* AppDelegate.swift */,
+				64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */,
 				645BA72A1F7966DE00348622 /* FirstViewController.swift */,
 				645BA72C1F7966DE00348622 /* SecondViewController.swift */,
 				645BA72E1F7966DE00348622 /* Main.storyboard */,
@@ -72,9 +107,13 @@
 				645BA7331F7966DE00348622 /* LaunchScreen.storyboard */,
 				645BA7361F7966DE00348622 /* Info.plist */,
 				645BA75F1F7A8AB600348622 /* NewMatchVC.swift */,
+				64C399581FB4B394004008B3 /* Player.swift */,
+				64C3995A1FB4B3A0004008B3 /* Team.swift */,
+				64C3995C1FB4B3B8004008B3 /* Match.swift */,
 				645BA7611F7A91EA00348622 /* CollectionViewCell.swift */,
 				64514B801FB35E3B0011B576 /* TableViewCellFile.swift */,
 				6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */,
+				64C3995E1FB4BD82004008B3 /* savedata.plist */,
 			);
 			path = "joscout ipad";
 			sourceTree = "<group>";
@@ -86,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 645BA7391F7966DE00348622 /* Build configuration list for PBXNativeTarget "joscout ipad" */;
 			buildPhases = (
+				0174FBBD649A5B36D8A426E8 /* [CP] Check Pods Manifest.lock */,
 				645BA7211F7966DE00348622 /* Sources */,
 				645BA7221F7966DE00348622 /* Frameworks */,
 				645BA7231F7966DE00348622 /* Resources */,
+				04CF3BC3343BBA67939D01A3 /* [CP] Embed Pods Frameworks */,
+				5D522883F5BD27EB43E6222A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C3995F1FB4BD82004008B3 /* savedata.plist in Resources */,
 				645BA7351F7966DE00348622 /* LaunchScreen.storyboard in Resources */,
 				645BA7321F7966DE00348622 /* Assets.xcassets in Resources */,
 				645BA7301F7966DE00348622 /* Main.storyboard in Resources */,
@@ -145,6 +188,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0174FBBD649A5B36D8A426E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		04CF3BC3343BBA67939D01A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-joscout ipad/Pods-joscout ipad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D522883F5BD27EB43E6222A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-joscout ipad/Pods-joscout ipad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		645BA7211F7966DE00348622 /* Sources */ = {
@@ -157,6 +248,10 @@
 				64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */,
 				6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */,
 				645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */,
+				64C399571FB497CE004008B3 /* joscout ipad.xcdatamodeld in Sources */,
+				64C399591FB4B394004008B3 /* Player.swift in Sources */,
+				64C3995D1FB4B3B8004008B3 /* Match.swift in Sources */,
+				64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */,
 				645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +387,7 @@
 		};
 		645BA73A1F7966DE00348622 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C262174093C9D9F5E3BA9F76 /* Pods-joscout ipad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +403,7 @@
 		};
 		645BA73B1F7966DE00348622 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 003361FB7C7D13E5692B7DBA /* Pods-joscout ipad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -342,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */,
+			);
+			currentVersion = 64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */;
+			path = "joscout ipad.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 645BA71D1F7966DD00348622 /* Project object */;
 }

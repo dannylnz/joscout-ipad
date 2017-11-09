@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 
 // protocol used for sending data back
@@ -17,46 +19,36 @@ protocol DataEnteredDelegate: class {
 
 class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    
+  
+    
+    
+    
     // VIEW DID LOAD - VIEW WILL APPEAR
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        
+        self.navigationController?.isNavigationBarHidden = true
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         presentAlert()
+        
     }
     
     
     // VAR - ARRAY - DATA
       weak var delegate: DataEnteredDelegate? = nil
     
+    //var player1 = PlayerClass()
     
-    var teamA = ["Marc-Andre ter Stegen",
-                 "Nelson Semedo",
-                 "Gerard Pique",
-                 "Samuel Umtiti",
-                 "Jordi Alba",
-                 "Ivan Rakitic",
-                 "Sergio Busquets",
-                 "Andres Iniesta",
-                 "Lionel Messi",
-                 "Luis Suarez",
-                 "Francisco Alcacer"]
-    var teamB = ["Francisco Casilla",
-                 "Nacho Fernandez",
-                 "Jesus Vallejo",
-                 "Sergio Ramos",
-                 "Marcelo",
-                 "Toni Kroos",
-                 "Casemiro",
-                 "Isco",
-                 "Marco Asensio",
-                 "Karim Benzema",
-                 "Cristiano Ronaldo"]
+    var teamA = Team()
+    
+    var teamB = Team()
+    
+    var match = Match()
 
+    var context = (UIApplication.shared.delegate as! AppDelegate!).persistentContainer.viewContext
     
     
     // OUTLETS
@@ -86,12 +78,38 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     @IBAction func addNewPlayerBtnLeft(_ sender: Any) {
-    insertNewPlayerInLeftTeam()
     
+        if (textFieldLeft?.text != ""){
+        
+        insertNewPlayerInLeftTeam()
+        } else {
+            print ("Please Insert a valid name inside the field")
+            
+        }
+        
+        
+        
     }
     
     @IBAction func addNewPlayerBtnRight(_ sender: UIButton) {
-      insertNewPlayerInRightTeam()
+      
+        if (textFieldRight?.text != ""){
+            
+            let newPlayer =  NSEntityDescription.entity(forEntityName: "Player", in: context)
+            newPlayer?.setValue(self.textFieldRight!.text, forKey: "nameOfPlayer")
+            
+            do { try context.save() } catch { print (error) }
+            
+            insertNewPlayerInRightTeam()
+            
+            
+            
+        } else {
+            print ("Please Insert a valid name inside the field")
+            
+        }
+        
+        
         
     }
     // MARK - Func Alert
@@ -192,7 +210,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     
-    // MARK - Func List
+    // MARK - Insert Players Functions
     
     func insertNewPlayerInLeftTeam() {
         
@@ -200,11 +218,13 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
             print("Add Text Before!")
         }
         
+        var player : PlayerClass = PlayerClass()
+        player.name = textFieldLeft.text!
+        player.age = 28
+
+        teamA.players.append(player)
         
-        
-        teamA.append(textFieldLeft.text!)
-        
-        let indexPath = IndexPath(row: teamA.count - 1, section: 0)
+        let indexPath = IndexPath(row: teamA.players.count - 1, section: 0)
         
         tableViewLeft.beginUpdates()
         tableViewLeft.insertRows(at: [indexPath], with: .automatic)
@@ -220,11 +240,13 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
             print("Add Text Before!")
         }
         
+        var player : PlayerClass = PlayerClass()
+        player.name = textFieldRight.text!
+        player.age = 28
         
+        teamB.players.append(player)
         
-        teamB.append(textFieldRight.text!)
-        
-        let indexPath = IndexPath(row: teamB.count - 1, section: 0)
+        let indexPath = IndexPath(row: teamB.players.count - 1, section: 0)
         
         tableViewRight.beginUpdates()
         tableViewRight.insertRows(at: [indexPath], with: .automatic)
@@ -232,6 +254,9 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         
         textFieldRight.text = ""
         view.endEditing(true)
+        print(teamB)
+        
+        
     }
     
     
@@ -240,10 +265,10 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == tableViewLeft){
             
-            return teamA.count
+            return teamA.players.count
             
         }else if (tableView == tableViewRight){
-            return teamB.count
+            return teamB.players.count
             
             
         }else {
@@ -258,13 +283,13 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         if (tableView == tableViewLeft) {
             
             var cell = tableView.dequeueReusableCell(withIdentifier: "cellLeft", for: indexPath) as! TableViewCellLeft
-            cell.TableViewLeftName.text = teamA[indexPath.row]
+            cell.TableViewLeftName.text = teamA.players[indexPath.row].name
             return cell
             
             
         }else {
             var cell = tableView.dequeueReusableCell(withIdentifier: "cellRight", for: indexPath) as! TableViewCellRight
-            cell.TableViewRightName.text = teamB[indexPath.row]
+            cell.TableViewRightName.text = teamB.players[indexPath.row].name
             return cell
             
         }
@@ -279,7 +304,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         {
             if (editingStyle == .delete){
                 
-                teamA.remove(at: indexPath.row)
+                teamA.players.remove(at: indexPath.row)
                 tableViewLeft.beginUpdates()
                 tableViewLeft.deleteRows(at: [indexPath], with: .automatic)
                 tableViewLeft.endUpdates()
@@ -289,7 +314,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         {
             if (editingStyle == .delete){
                 
-                teamB.remove(at: indexPath.row)
+                teamB.players.remove(at: indexPath.row)
                 tableViewRight.beginUpdates()
                 tableViewRight.deleteRows(at: [indexPath], with: .automatic)
                 tableViewRight.endUpdates()
@@ -302,7 +327,13 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         }
     
     
-}
+    }
+    
+    @IBAction func save () {
+        match.teamA = teamA
+        match.teamB = teamB
+        
+    }
 
 }
 
