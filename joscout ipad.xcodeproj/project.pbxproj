@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64514B801FB35E3B0011B576 /* TableViewCellFile.swift */; };
 		645BA7291F7966DE00348622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7281F7966DE00348622 /* AppDelegate.swift */; };
 		645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA72A1F7966DE00348622 /* FirstViewController.swift */; };
 		645BA72D1F7966DE00348622 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA72C1F7966DE00348622 /* SecondViewController.swift */; };
 		645BA7301F7966DE00348622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645BA72E1F7966DE00348622 /* Main.storyboard */; };
 		645BA7321F7966DE00348622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 645BA7311F7966DE00348622 /* Assets.xcassets */; };
 		645BA7351F7966DE00348622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645BA7331F7966DE00348622 /* LaunchScreen.storyboard */; };
+		645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA75F1F7A8AB600348622 /* NewMatchVC.swift */; };
+		645BA7621F7A91EA00348622 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7611F7A91EA00348622 /* CollectionViewCell.swift */; };
+		6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64514B801FB35E3B0011B576 /* TableViewCellFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFile.swift; sourceTree = "<group>"; };
 		645BA7251F7966DE00348622 /* joscout ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "joscout ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645BA7281F7966DE00348622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		645BA72A1F7966DE00348622 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		645BA7311F7966DE00348622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		645BA7341F7966DE00348622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		645BA7361F7966DE00348622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		645BA75F1F7A8AB600348622 /* NewMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchVC.swift; sourceTree = "<group>"; };
+		645BA7611F7A91EA00348622 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				645BA7311F7966DE00348622 /* Assets.xcassets */,
 				645BA7331F7966DE00348622 /* LaunchScreen.storyboard */,
 				645BA7361F7966DE00348622 /* Info.plist */,
+				645BA75F1F7A8AB600348622 /* NewMatchVC.swift */,
+				645BA7611F7A91EA00348622 /* CollectionViewCell.swift */,
+				64514B801FB35E3B0011B576 /* TableViewCellFile.swift */,
+				6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */,
 			);
 			path = "joscout ipad";
 			sourceTree = "<group>";
@@ -139,9 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645BA7621F7A91EA00348622 /* CollectionViewCell.swift in Sources */,
 				645BA72D1F7966DE00348622 /* SecondViewController.swift in Sources */,
 				645BA7291F7966DE00348622 /* AppDelegate.swift in Sources */,
+				64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */,
+				6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */,
 				645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */,
+				645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +298,7 @@
 				DEVELOPMENT_TEAM = 4HPQKV33SX;
 				INFOPLIST_FILE = "joscout ipad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Portfolio.joscout-ipad";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.joscout-ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,7 +313,7 @@
 				DEVELOPMENT_TEAM = 4HPQKV33SX;
 				INFOPLIST_FILE = "joscout ipad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Portfolio.joscout-ipad";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.joscout-ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
