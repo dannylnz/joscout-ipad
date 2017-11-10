@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import Firebase
 
 
 
@@ -17,7 +17,7 @@ import CoreData
 class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
     
-  
+    
     
     
     
@@ -26,7 +26,8 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
-        
+        matchesRef = ref.child("matches")
+     
         
         
     }
@@ -37,9 +38,14 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     
-  
+    
     
     //var player1 = PlayerClass()
+    
+    let ref = Database.database().reference()
+    var matchesRef: DatabaseReference! = nil
+    var teamARef:DatabaseReference! = nil
+    var teamBRef:DatabaseReference! = nil
     
     var cell = CollectionViewCell()
     
@@ -48,7 +54,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     var teamB = Team()
     
     var match = Match()
-
+    
     var context = (UIApplication.shared.delegate as! AppDelegate!).persistentContainer.viewContext
     
     
@@ -79,10 +85,10 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     @IBAction func addNewPlayerBtnLeft(_ sender: Any) {
-    
-        if (textFieldLeft?.text != ""){
         
-        insertNewPlayerInLeftTeam()
+        if (textFieldLeft?.text != ""){
+            
+            insertNewPlayerInLeftTeam()
         } else {
             print ("Please Insert a valid name inside the field")
             
@@ -93,7 +99,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     @IBAction func addNewPlayerBtnRight(_ sender: UIButton) {
-      
+        
         if (textFieldRight?.text != ""){
             
             
@@ -131,6 +137,15 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
             self.teamRight.text = teamB
             self.dateAndTime.text = date
             self.stadiumLabel.text = stadium
+            
+            var datiA = ["player1":"callejon","player2":"mertens"]
+            
+            var datiB = ["player1":"pepp","player2":"ronald"]
+                
+            self.matchesRef.child("\(teamA!) - \(teamB!)").child(teamA!).setValue(datiA)
+            self.matchesRef.child("\(teamA!) - \(teamB!)").child(teamB!).setValue(datiB)
+            
+            
             
             
         }
@@ -217,7 +232,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         var player : PlayerClass = PlayerClass()
         player.name = textFieldLeft.text!
         player.age = 28
-
+        
         teamA.players.append(player)
         
         let indexPath = IndexPath(row: teamA.players.count - 1, section: 0)
@@ -315,14 +330,14 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
                 tableViewRight.deleteRows(at: [indexPath], with: .automatic)
                 tableViewRight.endUpdates()
             }
-        
-        
+            
+            
         } else {
             
             return
         }
-    
-    
+        
+        
     }
     
     @IBAction func save () {
@@ -330,7 +345,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         match.teamB = teamB
         
     }
-
+    
 }
 
 

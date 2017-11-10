@@ -115,6 +115,7 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
                                                                     "urlToImage": url.absoluteString]
                                     
                                     self.ref.child("users").child(user.uid).setValue(userInfo)
+                                    
                                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userVC")
                                     
                                     self.present(vc, animated: true, completion: nil)

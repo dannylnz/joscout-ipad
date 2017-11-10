@@ -15,4 +15,7 @@ class PlayerClass: NSObject {
     var nationality = ""
     var position = ""
     
+    
+    
+    
 }

@@ -7,11 +7,17 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import Firebase
+
 
 class FirstViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
-
+/// VAR & LET
+    
+    let ref = Database.database().reference()
+    
+    
+    
     
     var matches : [Match] = []
     
@@ -29,6 +35,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
         print(listOfmatches)
         
     }
+    
 
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     //var objects = ["1"]
@@ -54,7 +61,8 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return matches.count
+        
+        return ref.child("matches")
     }
     
     // MARK: - Prepare for segue
