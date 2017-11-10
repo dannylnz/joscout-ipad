@@ -26,6 +26,9 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

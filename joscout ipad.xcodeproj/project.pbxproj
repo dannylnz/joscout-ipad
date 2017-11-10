@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EBD5CEFC63D20B4487EB985 /* Pods_joscout_ipad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376D45E555AC622EDE699ACA /* Pods_joscout_ipad.framework */; };
+		643B57771FB5E5F200C9AC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 643B57761FB5E57C00C9AC76 /* GoogleService-Info.plist */; };
 		64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64514B801FB35E3B0011B576 /* TableViewCellFile.swift */; };
 		645BA7291F7966DE00348622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7281F7966DE00348622 /* AppDelegate.swift */; };
 		645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA72A1F7966DE00348622 /* FirstViewController.swift */; };
@@ -18,6 +19,8 @@
 		645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA75F1F7A8AB600348622 /* NewMatchVC.swift */; };
 		645BA7621F7A91EA00348622 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA7611F7A91EA00348622 /* CollectionViewCell.swift */; };
 		6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */; };
+		649942E71FB5C82B006EB195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649942E61FB5C82B006EB195 /* LoginViewController.swift */; };
+		649942EB1FB5CBD4006EB195 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */; };
 		64C399571FB497CE004008B3 /* joscout ipad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */; };
 		64C399591FB4B394004008B3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C399581FB4B394004008B3 /* Player.swift */; };
 		64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3995A1FB4B3A0004008B3 /* Team.swift */; };
@@ -28,6 +31,7 @@
 /* Begin PBXFileReference section */
 		003361FB7C7D13E5692B7DBA /* Pods-joscout ipad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joscout ipad.release.xcconfig"; path = "Pods/Target Support Files/Pods-joscout ipad/Pods-joscout ipad.release.xcconfig"; sourceTree = "<group>"; };
 		376D45E555AC622EDE699ACA /* Pods_joscout_ipad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_joscout_ipad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		643B57761FB5E57C00C9AC76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64514B801FB35E3B0011B576 /* TableViewCellFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFile.swift; sourceTree = "<group>"; };
 		645BA7251F7966DE00348622 /* joscout ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "joscout ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645BA7281F7966DE00348622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		645BA75F1F7A8AB600348622 /* NewMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchVC.swift; sourceTree = "<group>"; };
 		645BA7611F7A91EA00348622 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
+		649942E61FB5C82B006EB195 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "joscout ipad.xcdatamodel"; sourceTree = "<group>"; };
 		64C399581FB4B394004008B3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		64C3995A1FB4B3A0004008B3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		645BA7271F7966DE00348622 /* joscout ipad */ = {
 			isa = PBXGroup;
 			children = (
+				643B57761FB5E57C00C9AC76 /* GoogleService-Info.plist */,
 				645BA7281F7966DE00348622 /* AppDelegate.swift */,
 				64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */,
 				645BA72A1F7966DE00348622 /* FirstViewController.swift */,
@@ -114,6 +121,8 @@
 				64514B801FB35E3B0011B576 /* TableViewCellFile.swift */,
 				6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */,
 				64C3995E1FB4BD82004008B3 /* savedata.plist */,
+				649942E61FB5C82B006EB195 /* LoginViewController.swift */,
+				649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */,
 			);
 			path = "joscout ipad";
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			files = (
 				64C3995F1FB4BD82004008B3 /* savedata.plist in Resources */,
 				645BA7351F7966DE00348622 /* LaunchScreen.storyboard in Resources */,
+				643B57771FB5E5F200C9AC76 /* GoogleService-Info.plist in Resources */,
 				645BA7321F7966DE00348622 /* Assets.xcassets in Resources */,
 				645BA7301F7966DE00348622 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649942E71FB5C82B006EB195 /* LoginViewController.swift in Sources */,
 				645BA7621F7A91EA00348622 /* CollectionViewCell.swift in Sources */,
 				645BA72D1F7966DE00348622 /* SecondViewController.swift in Sources */,
 				645BA7291F7966DE00348622 /* AppDelegate.swift in Sources */,
@@ -252,6 +263,7 @@
 				64C399591FB4B394004008B3 /* Player.swift in Sources */,
 				64C3995D1FB4B3B8004008B3 /* Match.swift in Sources */,
 				64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */,
+				649942EB1FB5CBD4006EB195 /* SignUpViewController.swift in Sources */,
 				645BA7601F7A8AB600348622 /* NewMatchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

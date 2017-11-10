@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FirstViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -21,6 +22,12 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
         
         var match = Match()
         matches.append(match)
+        
+        let ref = Database.database().reference()
+        
+        let listOfmatches = ref.child("matches")
+        print(listOfmatches)
+        
     }
 
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard

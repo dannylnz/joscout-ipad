@@ -7,9 +7,10 @@
 		<dict>
 			<key>team</key>
 			<array>
-				<array>
-					<string></string>
-				</array>
+				<dict>
+					<key>Players</key>
+					<array/>
+				</dict>
 			</array>
 		</dict>
 		<dict/>
