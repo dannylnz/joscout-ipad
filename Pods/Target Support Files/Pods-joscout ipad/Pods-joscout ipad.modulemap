@@ -1,0 +1,6 @@
+framework module Pods_joscout_ipad {
+  umbrella header "Pods-joscout ipad-umbrella.h"
+
+  export *
+  module * { export * }
+}

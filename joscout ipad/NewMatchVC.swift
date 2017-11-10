@@ -11,10 +11,7 @@ import CoreData
 
 
 
-// protocol used for sending data back
-protocol DataEnteredDelegate: class {
-    func userDidEnterInformation(info: String)
-}
+
 
 
 class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
@@ -37,10 +34,11 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     
-    // VAR - ARRAY - DATA
-      weak var delegate: DataEnteredDelegate? = nil
+  
     
     //var player1 = PlayerClass()
+    
+    var cell = CollectionViewCell()
     
     var teamA = Team()
     
@@ -95,10 +93,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
       
         if (textFieldRight?.text != ""){
             
-            let newPlayer =  NSEntityDescription.entity(forEntityName: "Player", in: context)
-            newPlayer?.setValue(self.textFieldRight!.text, forKey: "nameOfPlayer")
             
-            do { try context.save() } catch { print (error) }
             
             insertNewPlayerInRightTeam()
             
@@ -134,8 +129,6 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
             self.dateAndTime.text = date
             self.stadiumLabel.text = stadium
             
-            //setting the values to the previous controller cell
-            self.delegate?.userDidEnterInformation(info: self.teamLeft.text!)
             
         }
         

@@ -11,4 +11,8 @@ import Foundation
 class PlayerClass: NSObject {
     var name = ""
     var age = 0
+    var height = 180
+    var nationality = ""
+    var position = ""
+    
 }

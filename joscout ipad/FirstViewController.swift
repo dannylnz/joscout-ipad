@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, DataEnteredDelegate {
+class FirstViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
 
     
@@ -34,13 +34,14 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         let match = matches[indexPath.row]
         
-        cell.teamAName.text = match.teamA.name
-        cell.teamBName.text = match.teamB.name
+        
         
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 8
+        cell.teamAName.text? = "Team A"
+        cell.teamBName.text? = "Team B"
         //objects.append("cellName")
         return cell
     }
@@ -51,13 +52,13 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     
     // MARK: - Prepare for segue
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSecondViewController" {
-            let newMatchVC = segue.destination as! NewMatchVC
-           // newMatchVC.match = 1
-            newMatchVC.delegate = self
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showSecondViewController" {
+//            let newMatchVC = segue.destination as! NewMatchVC
+//           // newMatchVC.match = 1
+//            newMatchVC.delegate = self
+//        }
+//    }
     
     func userDidEnterInformation(info: String) {
        

@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var teamAName: UILabel!
     @IBOutlet weak var teamBName: UILabel!
+    
     
     
     
