@@ -62,7 +62,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return ref.child("matches")
+        return matches.count
     }
     
     // MARK: - Prepare for segue
