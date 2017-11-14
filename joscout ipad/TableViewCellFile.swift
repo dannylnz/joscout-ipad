@@ -12,6 +12,9 @@ class TableViewCellLeft :UITableViewCell
 {
     @IBOutlet weak var TableViewLeftName: UILabel!
     
+    
+    
+    
 }
 
 class TableViewCellRight :UITableViewCell

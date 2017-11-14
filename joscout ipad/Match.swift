@@ -10,8 +10,20 @@ import Foundation
 
 
 class Match: NSObject {
-var scoreA = 0
-var scoreB = 0
-var teamA = Team()
-var teamB = Team()
+
+    var scoreA:Int?
+    var scoreB:Int?
+    var teamA: String?
+    var teamB: String?
+
+    
+    init(teamA: String?, teamB: String? ,scoreA:Int?, scoreB:Int?) {
+    
+    self.teamA = teamA
+    self.teamB = teamB
+    self.scoreA = scoreA
+    self.scoreB = scoreB
+    
+}
+
 }

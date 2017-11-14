@@ -15,30 +15,52 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
 /// VAR & LET
     
     let ref = Database.database().reference()
+    var countOfMatches = [DataSnapshot]()
+    
+    let db = Firestore.firestore()
+    var fsRef: DocumentReference? = nil
     
     
+    
+    //Outlets
+    
+    
+    
+    
+    
+    
+    @IBAction func addNewMatchBtn(_ sender: Any) {
+ 
+    }
     
     
     var matches : [Match] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.myOrientation = .landscape
+    override func viewDidAppear(_ animated: Bool) {
         
-        var match = Match()
-        matches.append(match)
-        
-        let ref = Database.database().reference()
-        
-        let listOfmatches = ref.child("matches")
-        print(listOfmatches)
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.myOrientation = .landscape
+        var match = Match(teamA: "Team A", teamB: "Team B", scoreA: 0,scoreB: 0)
+        
+        
+        matches.append(match)
 
+        }
+        
+    
+    
+    
+    
+    
+    
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    //var objects = ["1"]
+
     
     
     // MARK: Create collection View cell with title, image, and rounded border
@@ -46,7 +68,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        let match = matches[indexPath.row]
+        
         
         
         
@@ -54,15 +76,16 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 8
-        cell.teamAName.text? = "Team A"
-        cell.teamBName.text? = "Team B"
+        cell.teamAName.text? = "Team Name"
         //objects.append("cellName")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        collectionView.reloadData()
         return matches.count
+        
     }
     
     // MARK: - Prepare for segue
@@ -75,9 +98,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource, UICollec
 //        }
 //    }
     
-    func userDidEnterInformation(info: String) {
-       
-    }
+    
   
     
     

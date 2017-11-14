@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 class PlayerDetails:UIViewController {
@@ -16,6 +17,6 @@ class PlayerDetails:UIViewController {
     @IBOutlet weak var playerHeight: UILabel!
     @IBOutlet weak var playerNationality: UILabel!
     
-  
+    
     
 }

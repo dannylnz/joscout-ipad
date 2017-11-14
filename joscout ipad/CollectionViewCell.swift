@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 
 class CollectionViewCell: UICollectionViewCell {
     
+   let ref = Database.database().reference()
+    
     @IBOutlet weak var teamAName: UILabel!
-    @IBOutlet weak var teamBName: UILabel!
+   
     
     
     
     
+    
+
 }
+
+

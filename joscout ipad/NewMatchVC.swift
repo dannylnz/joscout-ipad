@@ -15,47 +15,40 @@ import Firebase
 
 
 class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
-    
-    
-    
-    
-    
-    
     // VIEW DID LOAD - VIEW WILL APPEAR
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        
-        matchesRef = ref.child("matches")
-     
-        
+        ref = Database.database().reference()
+
+        print(ref)
         
     }
+    
+    //END OF VIEW DID LOAD
     
     override func viewWillAppear(_ animated: Bool) {
         presentAlert()
         
     }
+    // END OF VIEW WILL APPEAR
     
+    //VAR AND LET
     
+
+    var ref: DatabaseReference!
     
-    
-    //var player1 = PlayerClass()
-    
-    let ref = Database.database().reference()
     var matchesRef: DatabaseReference! = nil
     var teamARef:DatabaseReference! = nil
     var teamBRef:DatabaseReference! = nil
-    
     var cell = CollectionViewCell()
-    
     var teamA = Team()
-    
     var teamB = Team()
+    var match = Match(teamA: "teamA",teamB:"teamB", scoreA: 0, scoreB: 0)
+    var nameOfTeamA = ""
+    var nameOfTeamB = ""
     
-    var match = Match()
-    
-    var context = (UIApplication.shared.delegate as! AppDelegate!).persistentContainer.viewContext
+    //END OF VAR AND LET
     
     
     // OUTLETS
@@ -71,6 +64,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     @IBOutlet weak var textFieldLeft: UITextField!
     @IBOutlet weak var textFieldRight: UITextField!
     
+    //END OF OUTLETS
     
     // MARK - Action Buttons
     
@@ -86,6 +80,8 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     
     @IBAction func addNewPlayerBtnLeft(_ sender: Any) {
         
+        //TODO: Add new player in Table view of Team A and Add data to firebase
+        
         if (textFieldLeft?.text != ""){
             
             insertNewPlayerInLeftTeam()
@@ -100,6 +96,8 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     
     @IBAction func addNewPlayerBtnRight(_ sender: UIButton) {
         
+        
+        //TODO: Add new player in Table view of Team B and Add data to firebase
         if (textFieldRight?.text != ""){
             
             
@@ -116,7 +114,7 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         
         
     }
-    // MARK - Func Alert
+    // MARK - Func Alert - To set the initial data of the match
     
     func presentAlert() {
         //Creating UIAlertController and
@@ -127,23 +125,34 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
             
             //getting the input values from user
-            let teamA = alertController.textFields?[0].text
-            let teamB = alertController.textFields?[1].text
+            let teamAName = alertController.textFields?[0].text
+            let teamBName = alertController.textFields?[1].text
             let date = alertController.textFields?[2].text
             let stadium = alertController.textFields?[3].text
             
             //setting the values to the labels
-            self.teamLeft.text = teamA
-            self.teamRight.text = teamB
+            self.teamLeft.text = teamAName
+            self.teamRight.text = teamBName
             self.dateAndTime.text = date
             self.stadiumLabel.text = stadium
             
-            var datiA = ["player1":"callejon","player2":"mertens"]
+            self.nameOfTeamA = teamAName!
+            self.nameOfTeamB = teamBName!
             
-            var datiB = ["player1":"pepp","player2":"ronald"]
-                
-            self.matchesRef.child("\(teamA!) - \(teamB!)").child(teamA!).setValue(datiA)
-            self.matchesRef.child("\(teamA!) - \(teamB!)").child(teamB!).setValue(datiB)
+            let key = self.ref.childByAutoId().key
+            
+            let newMatch = [
+            "team A Name": teamAName ,
+            "team B Name": teamBName,
+                    "date":date,
+                    "stadium": stadium
+            ] as [String : Any]
+            
+            
+             self.ref.child("matches").child("match1").setValue(newMatch)
+            
+            
+            
             
             
             
@@ -178,6 +187,13 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         
         
     }
+    
+    
+    
+    
+    
+    
+    // Shows the result alert box where user can update
     func presentAlertResult() {
         
         //Creating UIAlertController and
@@ -221,19 +237,40 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     
+    
+    
+    
+    
+    
     // MARK - Insert Players Functions
     
     func insertNewPlayerInLeftTeam() {
         
         if textFieldLeft.text!.isEmpty {
             print("Add Text Before!")
-        }
+        } else {
         
-        var player : PlayerClass = PlayerClass()
-        player.name = textFieldLeft.text!
-        player.age = 28
+        ref = Database.database().reference()
+            
+        let key = ref.childByAutoId().key
+            
+        var player : PlayerClass = PlayerClass(name: textFieldLeft.text! as String, age: 20 , height: 100, nationality: "italian",position:"CEN")
+            
         
-        teamA.players.append(player)
+            let newPlayer = ["id": key,
+                             "playerName": textFieldLeft.text! as String,
+                             "age":player.age as! Int,
+                             "height": player.height as! Int,
+                             "nationality": player.nationality as! String,
+                             "position":player.position as! String
+                ] as [String : Any]
+            
+            
+            
+            ref.child("matches").child("match1").child("\(nameOfTeamA)").childByAutoId().setValue(newPlayer)
+            
+        
+            teamA.players.append(player)
         
         let indexPath = IndexPath(row: teamA.players.count - 1, section: 0)
         
@@ -244,6 +281,8 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
         textFieldLeft.text = ""
         view.endEditing(true)
     }
+        
+    }
     
     func insertNewPlayerInRightTeam() {
         
@@ -251,9 +290,9 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
             print("Add Text Before!")
         }
         
-        var player : PlayerClass = PlayerClass()
+        var player : PlayerClass = PlayerClass(name: "Pall1", age: 18 , height: 180, nationality: "slovenian",position:"ATT")
         player.name = textFieldRight.text!
-        player.age = 28
+
         
         teamB.players.append(player)
         
@@ -272,6 +311,21 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     
     
     // MARK - Table views protocols
+    
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "playerDetails" {
+//                if let indexPath = self.tableViewLeft.indexPathForSelectedRow {
+//                    let name = posts[indexPath.row] as! [String: AnyObject]
+//                    let postDetails = post["postID"] as? String
+//                    let controller = segue.destination as! PlayerDetails
+//                    controller.playerName = textFieldLeft.text
+//                    controller.playerAge = PlayerClass.
+//                }
+//            }
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == tableViewLeft){
@@ -341,8 +395,8 @@ class NewMatchVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITab
     }
     
     @IBAction func save () {
-        match.teamA = teamA
-        match.teamB = teamB
+        match.teamA = teamA.name
+        match.teamB = teamB.name
         
     }
     

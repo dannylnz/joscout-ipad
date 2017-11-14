@@ -21,7 +21,6 @@
 		6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */; };
 		649942E71FB5C82B006EB195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649942E61FB5C82B006EB195 /* LoginViewController.swift */; };
 		649942EB1FB5CBD4006EB195 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */; };
-		64C399571FB497CE004008B3 /* joscout ipad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */; };
 		64C399591FB4B394004008B3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C399581FB4B394004008B3 /* Player.swift */; };
 		64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3995A1FB4B3A0004008B3 /* Team.swift */; };
 		64C3995D1FB4B3B8004008B3 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3995C1FB4B3B8004008B3 /* Match.swift */; };
@@ -46,7 +45,6 @@
 		6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 		649942E61FB5C82B006EB195 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "joscout ipad.xcdatamodel"; sourceTree = "<group>"; };
 		64C399581FB4B394004008B3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		64C3995A1FB4B3A0004008B3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		64C3995C1FB4B3B8004008B3 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -83,6 +81,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		641C1EF61FBB3A000012864C /* Sign Up and Login */ = {
+			isa = PBXGroup;
+			children = (
+				649942E61FB5C82B006EB195 /* LoginViewController.swift */,
+				649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */,
+			);
+			path = "Sign Up and Login";
+			sourceTree = "<group>";
+		};
 		645BA71C1F7966DD00348622 = {
 			isa = PBXGroup;
 			children = (
@@ -104,15 +111,11 @@
 		645BA7271F7966DE00348622 /* joscout ipad */ = {
 			isa = PBXGroup;
 			children = (
+				645BA72E1F7966DE00348622 /* Main.storyboard */,
 				643B57761FB5E57C00C9AC76 /* GoogleService-Info.plist */,
 				645BA7281F7966DE00348622 /* AppDelegate.swift */,
-				64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */,
 				645BA72A1F7966DE00348622 /* FirstViewController.swift */,
 				645BA72C1F7966DE00348622 /* SecondViewController.swift */,
-				645BA72E1F7966DE00348622 /* Main.storyboard */,
-				645BA7311F7966DE00348622 /* Assets.xcassets */,
-				645BA7331F7966DE00348622 /* LaunchScreen.storyboard */,
-				645BA7361F7966DE00348622 /* Info.plist */,
 				645BA75F1F7A8AB600348622 /* NewMatchVC.swift */,
 				64C399581FB4B394004008B3 /* Player.swift */,
 				64C3995A1FB4B3A0004008B3 /* Team.swift */,
@@ -120,9 +123,11 @@
 				645BA7611F7A91EA00348622 /* CollectionViewCell.swift */,
 				64514B801FB35E3B0011B576 /* TableViewCellFile.swift */,
 				6474F2A41FB3B46D00070BD0 /* PlayerDetails.swift */,
+				645BA7361F7966DE00348622 /* Info.plist */,
 				64C3995E1FB4BD82004008B3 /* savedata.plist */,
-				649942E61FB5C82B006EB195 /* LoginViewController.swift */,
-				649942EA1FB5CBD4006EB195 /* SignUpViewController.swift */,
+				645BA7331F7966DE00348622 /* LaunchScreen.storyboard */,
+				645BA7311F7966DE00348622 /* Assets.xcassets */,
+				641C1EF61FBB3A000012864C /* Sign Up and Login */,
 			);
 			path = "joscout ipad";
 			sourceTree = "<group>";
@@ -259,7 +264,6 @@
 				64514B811FB35E3B0011B576 /* TableViewCellFile.swift in Sources */,
 				6474F2A51FB3B46D00070BD0 /* PlayerDetails.swift in Sources */,
 				645BA72B1F7966DE00348622 /* FirstViewController.swift in Sources */,
-				64C399571FB497CE004008B3 /* joscout ipad.xcdatamodeld in Sources */,
 				64C399591FB4B394004008B3 /* Player.swift in Sources */,
 				64C3995D1FB4B3B8004008B3 /* Match.swift in Sources */,
 				64C3995B1FB4B3A0004008B3 /* Team.swift in Sources */,
@@ -451,19 +455,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		64C399551FB497CE004008B3 /* joscout ipad.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */,
-			);
-			currentVersion = 64C399561FB497CE004008B3 /* joscout ipad.xcdatamodel */;
-			path = "joscout ipad.xcdatamodeld";
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 645BA71D1F7966DD00348622 /* Project object */;
 }

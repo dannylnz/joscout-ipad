@@ -10,5 +10,8 @@ import Foundation
 
 class Team: NSObject {
     var name = ""
-var players: [PlayerClass] = []
+    var players: [PlayerClass] = []
+    
+    
+    
 }
